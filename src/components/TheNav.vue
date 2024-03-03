@@ -51,10 +51,10 @@ const toggleNav = () => (showMenu.value = !showMenu.value);
           md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0
         "
       >
-        <router-link to="/" class="text-gray-800 hover:text-indigo-400 text-right" active-class="active-btn">Home</router-link>
-        <router-link to="/about" class="text-gray-800 hover:text-indigo-400 text-right" active-class="active-btn">About</router-link>
-        <router-link to="/projects" class="text-gray-800 hover:text-indigo-400 text-right" active-class="active-btn">Projects</router-link>
-        <router-link to="/contact" class="text-gray-800 hover:text-indigo-400 text-right" active-class="active-btn">Contact</router-link>
+        <router-link to="/" class="text-gray-800 hover:text-indigo-400 text-right font-medium" active-class="active-btn">Home</router-link>
+        <router-link to="/about" class="text-gray-800 hover:text-indigo-400 text-right font-medium" active-class="active-btn">About</router-link>
+        <router-link to="/projects" class="text-gray-800 hover:text-indigo-400 text-righy font-medium" active-class="active-btn">Projects</router-link>
+        <router-link to="/contact" class="text-gray-800 hover:text-indigo-400 text-right font-medium" active-class="active-btn">Contact</router-link>
       </ul>
     </nav>
   </div>

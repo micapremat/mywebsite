@@ -1,11 +1,11 @@
 @import './base.css';
 
 #app {
-  max-width: 1280px;
   align-self: self-start;
   margin: 0 auto;
   padding: 2rem;
   font-weight: normal;
+  width: 95%;
 }
 
 a,
@@ -25,7 +25,8 @@ a,
 @media (min-width: 1024px) {
   body {
     display: flex;
-    place-items: center;
+    background-color: #F7F4F0;
+    font-family: "Montserrat", sans-serif;
   }
 
   #app {

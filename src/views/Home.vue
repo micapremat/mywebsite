@@ -1,9 +1,10 @@
 <script setup lang="ts">
+import HomeHeader from "../components/HomeHeader.vue"
 </script>
 
 <template>
-  <div class="greetings">
-    <h1 class="text-red-500 title">Home</h1>
+  <div class="min-w-full">
+    <HomeHeader />
   </div>
 </template>
 
