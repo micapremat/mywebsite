@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import ContactModal from './ContactModal.vue'
 
 let showMenu = ref(false);
 const toggleNav = () => (showMenu.value = !showMenu.value);
+const openContactModal = ref(false)
 
 </script>
 
@@ -54,9 +56,12 @@ const toggleNav = () => (showMenu.value = !showMenu.value);
         <router-link to="/" class="text-gray-800 hover:text-indigo-400 text-right font-medium" active-class="active-btn">Home</router-link>
         <router-link to="/about" class="text-gray-800 hover:text-indigo-400 text-right font-medium" active-class="active-btn">About</router-link>
         <router-link to="/projects" class="text-gray-800 hover:text-indigo-400 text-righy font-medium" active-class="active-btn">Projects</router-link>
-        <router-link to="/contact" class="text-gray-800 hover:text-indigo-400 text-right font-medium" active-class="active-btn">Contact</router-link>
+        <button class="text-gray-800 hover:text-indigo-400 text-right font-medium"  @click="openContactModal = true">
+          Contact
+        </button>
       </ul>
     </nav>
+    <ContactModal v-if="openContactModal" @close="openContactModal = false"/>
   </div>
 </template>
 

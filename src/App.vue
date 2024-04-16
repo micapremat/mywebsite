@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Home from './views/Home.vue'
 import TheNav from './components/TheNav.vue'
+import TheFooter from './components/TheFooter.vue';
 </script>
 
 <template>
@@ -10,6 +10,9 @@ import TheNav from './components/TheNav.vue'
   <body>
     <router-view />
   </body>
+  <footer>
+    <TheFooter />
+  </footer>
 </template>
 
 <style scoped>

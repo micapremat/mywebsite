@@ -21,7 +21,7 @@ const handleKeyPress = (e: KeyboardEvent) => {
 
     if(runner !== null) {
         if(e.key == 'ArrowRight') {
-            runnerX+=10
+            runnerX+=20
             //add the position to the runner image
             runner.style.left =  `${runnerX}px` 
             //when runner position mayor to finish position go to about page
@@ -31,7 +31,7 @@ const handleKeyPress = (e: KeyboardEvent) => {
                 router.push("/about")
             }
         } else if(e.key == 'ArrowLeft') {
-            runnerX-=10
+            runnerX-=20
             //add the position to the runner image
             runner.style.left =  `${runnerX}px` 
         }
