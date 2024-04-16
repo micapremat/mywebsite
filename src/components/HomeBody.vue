@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { inject } from 'vue'
 
 const router = useRouter()
 const isRunning = ref(false)
+const isFun = inject('isFun')
 
 const handleKeyPress = (e: KeyboardEvent) => {
     //get runner image
@@ -39,10 +41,14 @@ const handleKeyPress = (e: KeyboardEvent) => {
 };  
 
 const followme = () => {
-    isRunning.value = true
-    
-    //start to move the runner when key up
-    document.addEventListener("keyup", handleKeyPress)
+    if (isFun) {
+        isRunning.value = true
+        
+        //start to move the runner when key up
+        document.addEventListener("keyup", handleKeyPress)
+    } else {
+        router.push("/about")
+    }
 }
 
 const stopRunner = () => {
@@ -59,9 +65,9 @@ const stopRunner = () => {
         </div>
         <div class="text-center mb-2">
             <p class="underline font-semibold text-xl py-4 cursor-pointer" @click="followme">Go for it</p>
-            <p class="w-2/3 mx-auto font-bold text-sm">You just need to guide the runner to the finish line </p>
+            <p class="w-2/3 mx-auto font-bold text-sm" v-if="isFun">You just need to guide the runner to the finish line </p>
         </div>
-        <div class="flex flex-row justify-around">
+        <div class="flex flex-row justify-around" v-if="isFun">
             <div class=" self-end">
                 <img src="../assets/img/run.gif" class="absolute left-[20px] sm:left-[10%] lg:left-[15%] header-img w-20 cursor-pointer" id="runner" @click="followme"/>
             </div>
@@ -72,7 +78,7 @@ const stopRunner = () => {
         <div class="text-center" v-if="isRunning">
             <button class=" text-red-600 font-semibold" @click="stopRunner">Stop the runner</button>
         </div>
-        <div class="text-center py-4 mt-20">
+        <div class="text-center py-4" :class="isFun ? 'mt-20' : 'mt-2'">
             <p class="w-2/3 mx-auto font-bold text-lg">I will tell you about who I am, what I do, what I like, where I go... </p>
         </div>
     </div>

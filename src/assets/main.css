@@ -25,7 +25,7 @@ a,
 @media (min-width: 1024px) {
   body {
     display: flex;
-    background-color: #F7F4F0;
+    background-color: #fefefe;
     font-family: "Montserrat", sans-serif;
     min-height: 88vh;
   }

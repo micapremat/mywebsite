@@ -50,7 +50,10 @@ const openContactModal = ref(false)
           mt-8
           space-y-4
           justify-end
-          md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0
+          bg-[#fefefe]
+          p-5
+          rounded
+          md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0 md:p-0
         "
       >
         <router-link to="/" class="text-gray-800 hover:text-indigo-400 text-right font-medium" active-class="active-btn">Home</router-link>

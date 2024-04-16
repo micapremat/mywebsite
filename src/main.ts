@@ -9,6 +9,11 @@ import router from './router'
 
 const app = createApp(App)
 
+const isFun = false;
+
+// Provide the global property
+app.provide('isFun', isFun);
+
 app.use(createPinia()).use(router)
 
 app.mount('#app')
