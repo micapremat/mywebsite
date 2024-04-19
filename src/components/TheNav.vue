@@ -73,6 +73,7 @@ const changeFun = () => {
           class="
               absolute
               right-14
+              z-20
             flex-col
             mt-8
             space-y-4
