@@ -1,11 +1,31 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
-import { inject } from 'vue'
+// @ts-ignore
+import { useSwitchFun } from '../stores/switchFun'
 
-const router = useRouter()
-const isRunning = ref(false)
-const isFun = inject('isFun')
+const store = useSwitchFun();
+
+const router = useRouter();
+const isRunning = ref(false);
+const techList = [
+	    'Javascript',
+		'Vue Js',
+		'Angular',
+        'React',
+        'NodeJS',
+        'C#',
+        'Asp .Net',
+        'Java',
+];
+const count_li = ref(0);
+const count = ref(0);
+const speed = ref(100);
+
+onMounted(() => {
+    console.log('lala')
+    animateText()
+})
 
 const handleKeyPress = (e: KeyboardEvent) => {
     //get runner image
@@ -41,7 +61,7 @@ const handleKeyPress = (e: KeyboardEvent) => {
 };  
 
 const followme = () => {
-    if (isFun) {
+    if (store.getFun) {
         isRunning.value = true
         
         //start to move the runner when key up
@@ -55,19 +75,43 @@ const stopRunner = () => {
     isRunning.value = false;
     document.removeEventListener("keyup", handleKeyPress)
 }
+
+const animateText = () => {
+    let tipo = techList[count_li.value].substring(0, count.value);
+    const techText = document.getElementById('tech-text');
+    if (techText) {
+        techText.textContent = tipo;
+    }
+	count.value++;
+	var tempo = setTimeout(animateText, speed.value);
+    if(count.value > techList[count_li.value].length) {
+        count.value = 0;
+        count_li.value++;
+        clearTimeout(tempo);
+        setTimeout(animateText, 2000);
+    }
+
+    if(count_li.value === techList.length) {
+        count_li.value = 0;
+    }
+}
 </script>
 
 <template>
   <div class="lg:flex justify-around flex-row mt-14">
     <div class="flex-col">
+        <div class="text-center py-4" :class="store.getFun ? 'mt-20' : 'mt-2'">
+            <p class="w-2/3 mx-auto font-bold text-lg ">Hi! I'm Micaela. I'm a fullstack developer. I love implementing solutions through code. </p>
+            <p class="w-2/3 h-10 mx-auto mt-5 text-lg" id="tech-text"> </p>
+        </div>
         <div class="text-center">
             <h3 class="text-xl text-primary font-medium"> Do you want to know me better?</h3>
         </div>
         <div class="text-center mb-2">
             <p class="underline font-semibold text-xl py-4 cursor-pointer" @click="followme">Go for it</p>
-            <p class="w-2/3 mx-auto font-bold text-sm" v-if="isFun">You just need to guide the runner to the finish line </p>
+            <p class="w-2/3 mx-auto font-bold text-sm" v-if="store.getFun">You just need to guide the runner to the finish line </p>
         </div>
-        <div class="flex flex-row justify-around" v-if="isFun">
+        <div class="flex flex-row justify-around" v-if="store.getFun">
             <div class=" self-end">
                 <img src="../assets/img/run.gif" class="absolute left-[20px] sm:left-[10%] lg:left-[15%] header-img w-20 cursor-pointer" id="runner" @click="followme"/>
             </div>
@@ -78,9 +122,7 @@ const stopRunner = () => {
         <div class="text-center" v-if="isRunning">
             <button class=" text-red-600 font-semibold" @click="stopRunner">Stop the runner</button>
         </div>
-        <div class="text-center py-4" :class="isFun ? 'mt-20' : 'mt-2'">
-            <p class="w-2/3 mx-auto font-bold text-lg">I will tell you about who I am, what I do, what I like, where I go... </p>
-        </div>
+        
     </div>
     <div class="flex-col">
         <div class="text-center">
@@ -104,5 +146,4 @@ const stopRunner = () => {
     li::marker {
         color: var(--primary);
     }
-    
 </style>
