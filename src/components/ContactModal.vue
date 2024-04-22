@@ -6,6 +6,8 @@ import { charRegex, emailRegex } from '@/types/RegexPatterns';
 // @ts-ignore
 import { Email } from '@/assets/smtp/smtp.js';
 
+const emit = defineEmits(['close']);
+
 const errorMsgs = ref<Array<object>>();
 const formData = ref({
     name: '',
@@ -64,14 +66,17 @@ const send = async () => {
     const valid = validateFields()
     console.log(valid)
     if (valid){
+
         Email.send({
-            SecureToken : "C973D7AD-F097-4B95-91F4-40ABC5567812",
+          Host : "smtp.elasticemail.com",
+          Username : "micapremat@gmail.com",
+    Password : "E476798E039440FB5551E00EC1F82D21496C",
             To : 'micapremat@gmail.com',
-            From : formData.value.email,
-            Subject : formData.value.name + formData.value.lastname + " - Contact form",
-            Body : formData.value.message
+            From : 'micapremat@gmail.com',
+            Subject : formData.value.name + " " + formData.value.lastname + " - Contact form",
+            Body : "Email: " + formData.value.email + "<br> Message: " + formData.value.message
         }).then(
-            console.log('email sended')
+            emit('close')
         );
     }
 }
