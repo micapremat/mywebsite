@@ -66,15 +66,14 @@ const send = async () => {
     const valid = validateFields()
     console.log(valid)
     if (valid){
-
         Email.send({
           Host : "smtp.elasticemail.com",
           Username : "micapremat@gmail.com",
-    Password : "E476798E039440FB5551E00EC1F82D21496C",
-            To : 'micapremat@gmail.com',
-            From : 'micapremat@gmail.com',
-            Subject : formData.value.name + " " + formData.value.lastname + " - Contact form",
-            Body : "Email: " + formData.value.email + "<br> Message: " + formData.value.message
+          Password : "E476798E039440FB5551E00EC1F82D21496C",
+          To : 'micapremat@gmail.com',
+          From : 'micapremat@gmail.com',
+          Subject : formData.value.name + " " + formData.value.lastname + " - Contact form",
+          Body : "Email: " + formData.value.email + "<br> Message: " + formData.value.message
         }).then(
             emit('close')
         );

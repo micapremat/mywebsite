@@ -11,7 +11,7 @@ const goToGithub = () => {
 </script>
 
 <template>
-  <div class="flex flex-row justify-center mt-5">
+  <div class="flex flex-row justify-center py-5">
     <div>
         <button @click="goToLinkedin">
             <img src="@/assets/img/linkedin.png" class="w-6 mx-2"/>

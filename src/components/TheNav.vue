@@ -81,19 +81,19 @@ const changeFun = () => {
             bg-[#fefefe]
             p-5
             rounded
-            md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0 md:p-0
+            md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0 md:p-0 md:bg-transparent 
           "
         >
-          <router-link to="/" class="text-gray-800 hover:text-indigo-400 text-right font-medium" active-class="active-btn" @click="showMenu = !showMenu">
+          <router-link to="/" class="text-gray-800 hover:text-primary hover:bg-transparent text-right font-medium" active-class="active-btn" @click="showMenu = !showMenu">
             Home
           </router-link>
-          <router-link to="/about" class="text-gray-800 hover:text-indigo-400 text-right font-medium" active-class="active-btn" @click="showMenu = !showMenu">
+          <router-link to="/about" class="text-gray-800 hover:text-primary hover:bg-transparent text-right font-medium" active-class="active-btn" @click="showMenu = !showMenu">
             About
           </router-link>
-          <router-link to="/projects" class="text-gray-800 hover:text-indigo-400 text-righy font-medium" active-class="active-btn" @click="showMenu = !showMenu">
+          <router-link to="/projects" class="text-gray-800 hover:text-primary hover:bg-transparent text-righy font-medium" active-class="active-btn" @click="showMenu = !showMenu">
             Projects
           </router-link>
-          <button class="text-gray-800 hover:text-indigo-400 text-right font-medium"  @click="openContactModal = true, showMenu = !showMenu">
+          <button class="text-gray-800 hover:text-primary hover:bg-transparent text-right font-medium"  @click="openContactModal = true, showMenu = !showMenu">
             Contact
           </button>
         </ul>

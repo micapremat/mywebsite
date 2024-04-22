@@ -101,7 +101,7 @@ const animateText = () => {
   <div class="lg:flex justify-around flex-row mt-14">
     <div class="flex-col">
         <div class="text-center py-4" :class="store.getFun ? 'mt-20' : 'mt-2'">
-            <p class="w-2/3 mx-auto font-bold text-lg ">Hi! I'm Micaela. I'm a fullstack developer. I love implementing solutions through code. </p>
+            <p class="w-2/3 mx-auto font-bold text-lg ">Hi! I'm Micaela. I'm a fullstack developer and I love implementing solutions through code. </p>
             <p class="w-2/3 h-10 mx-auto mt-5 text-lg" id="tech-text"> </p>
         </div>
         <div class="text-center">
