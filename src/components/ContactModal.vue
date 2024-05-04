@@ -92,28 +92,28 @@ const send = async () => {
             </div>
         </template>
         <template v-slot:body>
-            <div class=" w-[350px]">
-                <div class="mt-6 text-left w-[350px]">
+            <div class="  w-[300px] md:w-[350px]">
+                <div class="mt-6 text-left">
                     <label class="text-black text-left font-bold text-lg block">Name*</label>
-                    <input type="text" class="text-left text-black rounded-lg border border-primary border-3 py-2 mt-1 w-[350px] px-2" 
+                    <input type="text" class="text-left text-black rounded-lg border border-primary border-3 py-2 mt-1 px-2 w-full" 
                         maxlength="30" v-model="formData.name" />
                     <span class="text-red-500 block absolute" v-if="errorMsgs">{{ findValueByKey(errorMsgs, "name") }}</span>
                 </div>
-                <div class="mt-6 text-left w-[350px]">
+                <div class="mt-6 text-left ">
                     <label class="text-black text-left font-bold text-lg block">Lastname*</label>
-                    <input type="text" class="text-left text-black rounded-lg border border-primary border-3 py-2 mt-1 w-[350px] px-2" 
+                    <input type="text" class="text-left text-black rounded-lg border border-primary border-3 py-2 mt-1 w-full px-2" 
                         maxlength="30" v-model="formData.lastname"/>
                     <span class="text-red-500 block absolute" v-if="errorMsgs">{{ findValueByKey(errorMsgs, "lastname") }}</span>
                 </div>
-                <div class="mt-6 text-left w-[350px]">
+                <div class="mt-6 text-left">
                     <label class="text-black text-left font-bold text-lg block">Email*</label>
-                    <input type="text" class="text-left text-black rounded-lg border border-primary border-3 py-2 mt-1 w-[350px] px-2" 
+                    <input type="text" class="text-left text-black rounded-lg border border-primary border-3 py-2 mt-1 w-full px-2" 
                         maxlength="30" v-model="formData.email"/>
                     <span class="text-red-500 block absolute" v-if="errorMsgs">{{ findValueByKey(errorMsgs, "email") }}</span>
                 </div>
-                <div class="mt-6 text-left w-[350px]">
+                <div class="mt-6 text-left">
                     <label class="text-black text-left font-bold text-lg block">Message*</label>
-                    <textarea type="text" class="text-left text-black rounded-lg border border-primary border-3 py-2 mt-1 w-[350px] h-[200px] px-2" v-model="formData.message">
+                    <textarea type="text" class="text-left text-black rounded-lg border border-primary border-3 py-2 mt-1 w-full h-[200px] px-2" v-model="formData.message">
                     </textarea>
                     <span class="text-red-500 block absolute" v-if="errorMsgs">{{ findValueByKey(errorMsgs, "message") }}</span>
                 </div>

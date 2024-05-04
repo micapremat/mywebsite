@@ -18,9 +18,9 @@ const isOpen = ref(props.isOpen)
 <template>
   <transition name="fade">
     <div>
-      <div class="fixed inset-0 z-10 bg-black opacity-70"></div>
+      <div class="fixed inset-0 z-40 bg-black opacity-70"></div>
       <div
-        :class="`max-w-full ${width} ${height} max-h-[800px] z-20 overflow-y-auto fixed inset-0 mx-auto my-auto rounded-xl shadow-lg bg-white`"
+        :class="`max-w-full ${width} ${height} max-h-[800px] z-50 overflow-y-auto fixed inset-0 mx-auto my-auto rounded-xl shadow-lg bg-white`"
       >
         <label
           class="btn btn-sm btn-circle absolute right-2 top-2 cursor-pointer z-30 text-black"
