@@ -28,7 +28,7 @@ const goToGithub = () => {
     </div>
     <div  class=" text-center mt-5">
 
-      <BaseButton :text="'Download resume'" @click="downloadPdf('../assets/files/Resume_Micaela_Premat_24.1.pdf')" class="bg-primary text-white" rounded/>
+      <BaseButton :text="'Download resume'" @click="downloadPdf('https://drive.google.com/file/d/1ikbWjxQRd7YtYsiVV8hrUZS5PJglam1y/view?usp=sharing')" class="bg-primary text-white" rounded/>
     </div>
   </div>
 </template>
