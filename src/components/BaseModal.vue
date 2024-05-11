@@ -27,19 +27,17 @@ const isOpen = ref(props.isOpen)
           @click.prevent="$emit('close')"
           >✕</label
         >
-        <div class="flex w-full h-full">
-          <div class="p-3">
-            <div>
+        <div class="flex w-full h-full justify-center">
+          <div>
             <div class="text-center flex-auto justify-center leading-6 text-black">
               <slot name="header"></slot>
             </div>
-            <div class="text-center text-md px-8">
+            <div class="text-center text-md">
               <slot name="body"></slot>
             </div>
-            <div class="text-center text-md px-8">
+            <div class="text-center text-md">
               <slot name="footer"></slot>
             </div>
-          </div>
           </div>
         </div>
       </div>

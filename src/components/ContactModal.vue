@@ -88,7 +88,7 @@ const send = async () => {
         <template v-slot:header>
             <div>
                 <!--End alert-->
-                <h2 class="text-2xl font-bold text-left mt-6 ml-3 border-b-2 border-primary">Contact</h2>
+                <h2 class="text-2xl font-bold text-left mt-12 border-b-2 border-primary">Contact</h2>
             </div>
         </template>
         <template v-slot:body>
