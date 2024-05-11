@@ -31,7 +31,7 @@ a,
   body {
     display: flex;
     font-family: "Montserrat", sans-serif;
-    min-height: 88vh;
+    min-height: 85vh;
   }
 
   #app {
